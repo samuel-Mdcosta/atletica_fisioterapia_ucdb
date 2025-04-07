@@ -1,0 +1,58 @@
+<div class="boxTable">
+    <img src="/img/logo.jpg" class="imagempngTabela"/>
+    <h1 class="title">
+        Carterinha de Associado
+    </h1>
+</div>
+<div id="pdf">
+    <div class="boxTablecard">
+        <img class="img" src="/img/modelocarterinhafisio-removebg-preview.png">
+        <div>
+            <?php if (!empty($this->view->retornaimg['foto_perfil'])): ?>
+                <img class="fotoassociado" src="/<?= $this->view->retornaimg['foto_perfil'] ?>" alt="Foto do Associado">
+            <?php endif; ?>
+        </div>
+        <div class="textoimagem">
+            <span><?= $this->view->carterinha['nome'] ?></span>
+        </div>
+        <div class="textoimagemcpf">
+            <span><?= $this->view->carterinha['cpf'] ?></span>
+        </div>
+        <div class="expiracao">
+            <span> 06 / 2025 </span>
+        </div>
+    </div>
+</div>
+
+<div class="uploadimg">
+    <div class="uploadfoto">
+        <form action="/autenticar/carterinha/upload" method="post" enctype="multipart/form-data">
+            <label>
+                Clique para adicionar sua foto
+                <br>
+                <small>*obrigatorio*</small>
+                <br>
+                <input type="file" name="foto">
+            </label>
+            <br>
+            <button class="img" type="submit">
+                Carregar foto
+            </button>
+        </form>
+    </div>
+
+    <div class="pdf">
+        <form>
+            <label>
+                Clique para fazer o download da sua carteria em pdf
+                <br>
+                <small>*opcional</small>
+            </label>
+            <br>
+            <button id="baixar" type="button">
+                Baixar carterinha
+            </button>
+        </form>
+    </div>
+</div>
+

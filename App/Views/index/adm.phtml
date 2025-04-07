@@ -1,0 +1,41 @@
+<div class="teste">
+
+    <div class="boxTable">
+        <img src="/img/logo.jpg" class="imagempngTabela"/>
+        <h1 class="title">
+            LIsta de Associados da atletica
+        </h1>
+    </div>
+
+    <div class="dadTable">
+        <table id="table">
+            <tr class="nameTable">
+                <th>Nome:</th>
+                <th>E-mail:</th>
+                <th>CPF:</th>
+                <th>Telefone:</th>
+                <th>Senha:</th>
+                <th>Status Pagamento:</th>
+                <th>Liberação:</th>
+            </tr>
+            <?php foreach ($this->associados as $associado) { ?>
+                <tr>
+                    <td><?php echo $associado['nome']; ?></td>
+                    <td><?php echo $associado['email']; ?></td>
+                    <td><?php echo $associado['cpf']; ?></td>
+                    <td><?php echo $associado['telefone']; ?></td>
+                    <td><?php echo $associado['senha']; ?></td>
+                    <td id="status-<?= $associado['id'] ?>">
+                        <?= $associado['status_pagamento_id'] == 1 ? 'Não Pago' : 'Pago'; ?>
+                    </td>
+                    <td>
+                        <button class="toggleButton" data-id="<?= $associado['id'] ?>">
+                            <?= $associado['status_pagamento_id'] == 1 ? "Liberar" : "Bloquear" ?>
+                        </button>
+                    </td>
+                </tr>
+            <?php } ?>
+        </table>
+
+    </div>
+</div>

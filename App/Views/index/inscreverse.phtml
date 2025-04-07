@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 36rem;">
+      <div class="card-body">
+
+        <div class="d-flex justify-content-center">
+          <img class="imagempng" src="/img/logo.jpg" />
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <h2>Preencha com as suas informações</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            
+          <!-- o metodo post nao deixa com que as informacoes vazem na url !-->
+            <form action="/registrar" method="post">
+              <div class="form-group">
+                <input type="text" value="<?php $this->view->usuario['nome'] ?>" name="nome" class="form-control" placeholder="Nome">
+              </div>
+              
+              <div class="form-group">
+                <input type="text" value="<?php $this->view->usuario['email'] ?>" name="email" class="form-control" placeholder="E-mail">
+              </div>
+
+              <div class="form-group">
+                <input type="text" value="<?php $this->view->usuario['cpf'] ?>" name="cpf" class="form-control" placeholder="cpf">
+              </div>
+
+              <div class="form-group">
+                <input type="text" value="<?php $this->view->usuario['telefone'] ?>" name="telefone" class="form-control" placeholder="Celular">
+              </div>
+
+              <div class="form-group">
+                <input type="password" value="<?php $this->view->usuario['senha'] ?>" name="senha" class="form-control" placeholder="Senha">
+              </div>
+              
+              <div class="mt-4 mb-4">
+              <small class="form-text">
+                Ao preencher os campos com seus dados pessoais, você reconhece e concorda que essas informações serão compartilhadas com os administradores da atlética para fins institucionais e administrativos internos.                
+              </small>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Inscrever-se</button>
+
+              <?php
+                if($this->view->erroCadastro){
+              ?>
+
+                <small class="form-text text-danger">erro ao tentar fazer o login</small>
+
+              <?php 
+                }
+              ?>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
